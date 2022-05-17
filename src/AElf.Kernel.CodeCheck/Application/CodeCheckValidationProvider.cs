@@ -45,8 +45,9 @@ namespace AElf.Kernel.CodeCheck.Application
 
         public async Task<bool> ValidateBlockAfterExecuteAsync(IBlock block)
         {
-            if (block.Header.Height == AElfConstants.GenesisBlockHeight)
+            if (block.Header.Height == AElfConstants.GenesisBlockHeight || !_codeCheckOptions.CodeCheckEnabled)
             {
+                Logger.LogInformation($"CodeCheckEnabled: {_codeCheckOptions.CodeCheckEnabled}");
                 return true;
             }
 
