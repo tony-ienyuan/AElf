@@ -18,6 +18,7 @@ jobs:
       - run: |
           sudo apt-get -y update 
           sudo apt-get -y install protobuf-compiler
+          sudo /bin/bash .build.sh
           dotnet --version
           dotnet publish AElf.sln /p:NoBuild=false --configuration Release -o ./build/node
           docker build -t node -f .github/workflows/Dockerfile .
