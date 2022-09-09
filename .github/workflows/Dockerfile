@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS base
+FROM mcr.microsoft.com/dotnet/sdk:3.1 AS base
 
 ARG FOLDER_NAME=TestNet_Build_Images_AELF_Node
 
