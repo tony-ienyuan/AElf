@@ -9,8 +9,8 @@ COPY [".", "/app"]
 RUN apt-get -y update && \
     apt-get -y install \
     protobuf-compiler \
-    unzip && \
-    dotnet publish AElf.sln /p:NoBuild=false --configuration Release -o /app/docker/ 
+    unzip
+    dotnet publish AElf.sln /p:NoBuild=false --configuration Release -o ./app/docker/ 
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0
 
