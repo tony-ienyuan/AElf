@@ -19,6 +19,7 @@ jobs:
           sudo apt-get -y update 
           sudo apt-get -y install protobuf-compiler
           dotnet --version
+          sudo mkdir /build/node
           dotnet publish AElf.sln /p:NoBuild=false --configuration Release -o /build/node
           docker build -t node -f .github/workflows/Dockerfile .
           docker tag node ienyan/aelf-node-mq
